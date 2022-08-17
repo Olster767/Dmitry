@@ -30,6 +30,9 @@ void setup()
 
 void loop()                     // run over and over again
 {
+  if (attachedFinger == false){
+    outMessage = bus.getOutCnt();
+  }
   // Пока палец не тронул сенсор будет выполняться следующий код
   if(!attachedFinger){
     // Получаем id отпечатка
@@ -64,6 +67,7 @@ int getFingerprintIDez() {
   // При сканировании пальца обновляется таймер и bool переменная attachedFinger = true
   attachedFinger = true;
   timer1 = millis();
+  
 
   p = finger.image2Tz();
   if (p != FINGERPRINT_OK)  return -1;
