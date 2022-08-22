@@ -33,17 +33,15 @@ void loop()                     // run over and over again
   if (attachedFinger == false){
     outMessage = bus.getOutCnt();
   }
-  // Пока палец не тронул сенсор будет выполняться следующий код
+  // Пока палец не тронул сенсор датчик готов с сканированию
   if(!attachedFinger){
     // Получаем id отпечатка
     id = getFingerprintIDez();
     delay(50);            //don't ned to run this at full speed.
     }
 
-  // Если палец тронул сенсор и прошла 1 секунда, переменная attachedFinger = false.
-//  Это нужно для 2-ух целей:
-//  1) Чтобы отпечаток не считывался более 1-го раза в течении 1-ой секунды
-//  2) Чтобы отправка на OPC сервер была более стабильной, т.к. без таймера в случае удержания пальца на датчике, увеличивается время ответа.
+  // Если палец тронул сенсор и прошла 1 секунда, то датчик готов к сканированию следующего отпечатка
+  // Слишком частый скан отпечатков приводит к задержке ответа на OPC сервере
   if (attachedFinger == true && millis() - timer1 > 1000){
     attachedFinger = false;
     }
@@ -54,6 +52,7 @@ void loop()                     // run over and over again
 
   // Эта часть кода отвечает за то чтобы не приходил двойной ответ, чтобы не было такого что сотрудник пришел и тут же ушел
   if (outMessage != bus.getOutCnt() && attachedFinger == true){
+    delay(1000);
     id = -1;
     outMessage = bus.getOutCnt();
     }
@@ -64,10 +63,9 @@ int getFingerprintIDez() {
   uint8_t p = finger.getImage();
   if (p != FINGERPRINT_OK)  return -1;
 
-  // При сканировании пальца обновляется таймер и bool переменная attachedFinger = true
+  // При сканировании пальца обновляется таймер, датчик не производит сканирование
   attachedFinger = true;
   timer1 = millis();
-  
 
   p = finger.image2Tz();
   if (p != FINGERPRINT_OK)  return -1;
