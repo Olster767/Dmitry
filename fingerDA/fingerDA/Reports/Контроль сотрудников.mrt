@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <MySQL Ref="2" type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" isKey="true">
+        <Alias>MySQL</Alias>
+        <ConnectionStringEncrypted>4973CcVdo8hDR7jMZEnnXtWoU4nGS9PI80OxhMtM4meHcPehYgW7YO8i/cTpSSFGiBh5Au81u/VqbCmFaknrXsRWU+N5XKPN4Vvo9OpYd0bHegeC</ConnectionStringEncrypted>
+        <Key>470a98016fde44aeb2701a473a6878b4</Key>
+        <Name>MySQL</Name>
+      </MySQL>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <ИсточникДанных1 Ref="3" type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true">
+        <Alias>ИсточникДанных1</Alias>
+        <Columns isList="true" count="3">
+          <value>employee_id,System.Int32</value>
+          <value>SUM_x0028_worked_out_x0029_,System.Double</value>
+          <value>FIO,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>0f7f9655e3d942f8b600ecf5ec73df5d</Key>
+        <Name>ИсточникДанных1</Name>
+        <NameInSource>MySql</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT employee_id, FIO, SUM(worked_out) FROM employee_сontrol
+	where (time_come &gt;= @timeBegin) and (time_come &lt;= @timeEnd)
+GROUP BY employee_id; </SqlCommand>
+      </ИсточникДанных1>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="2">
+      <value>,timeEnd,timeEnd,,System.Double,,False,False,False,False,,,True</value>
+      <value>,timeBegin,timeBegin,,System.Double,,False,False,False,False,,,True</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>a3a789b79e184642a3d0f27ed07db051</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <HeaderИсточникДанных1 Ref="5" type="HeaderBand" isKey="true">
+          <Border>Left, Right;[44:115:107];1;Solid;False;4;Black;True</Border>
+          <Brush>[144:215:207]</Brush>
+          <ClientRectangle>0,0.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <HeaderИсточникДанных1_employee_id Ref="6" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderИсточникДанных1_employee_id</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text> ID сотрудника</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderИсточникДанных1_employee_id>
+            <HeaderИсточникДанных1_FIO Ref="7" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderИсточникДанных1_FIO</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text> ФИО сотрудника</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderИсточникДанных1_FIO>
+            <HeaderИсточникДанных1_SUM_worked_out_ Ref="8" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.6,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderИсточникДанных1_SUM_worked_out_</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text> Отработанное время</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderИсточникДанных1_SUM_worked_out_>
+          </Components>
+          <ComponentStyle>Стиль21_Заголовок_Данных1</ComponentStyle>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>HeaderИсточникДанных1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </HeaderИсточникДанных1>
+        <DataИсточникДанных1 Ref="9" type="DataBand" isKey="true">
+          <Border>Left, Right;[44:115:107];1;Solid;False;4;Black;True</Border>
+          <Brush>[219:255:255]</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,2,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <DataИсточникДанных1_employee_id Ref="10" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataИсточникДанных1_employee_id</Name>
+              <Page isRef="4" />
+              <Parent isRef="9" />
+              <Text> {ИсточникДанных1.employee_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataИсточникДанных1_employee_id>
+            <DataИсточникДанных1_FIO Ref="11" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.4,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataИсточникДанных1_FIO</Name>
+              <Page isRef="4" />
+              <Parent isRef="9" />
+              <Text> {ИсточникДанных1.FIO}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataИсточникДанных1_FIO>
+            <DataИсточникДанных1_SUM_worked_out_ Ref="12" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.6,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataИсточникДанных1_SUM_worked_out_</Name>
+              <Page isRef="4" />
+              <Parent isRef="9" />
+              <Text> {ИсточникДанных1.SUM_worked_out_}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataИсточникДанных1_SUM_worked_out_>
+          </Components>
+          <ComponentStyle>Стиль21_Данные1_Стиль четных строк</ComponentStyle>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>ИсточникДанных1</DataSourceName>
+          <Expressions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Name>DataИсточникДанных1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataИсточникДанных1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Expressions isList="true" count="0" />
+      <Guid>d26fe868e3d14406bf39c9aee8a11ba2</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>report_1</ReportAlias>
+  <ReportChanged>8/31/2022 4:30:59 PM</ReportChanged>
+  <ReportCreated>8/25/2022 1:16:40 PM</ReportCreated>
+  <ReportFile>C:\Users\GWS\Documents\Simple-Scada 2 (time-demo)\Projects\fingerDA\Reports\Контроль сотрудников.mrt</ReportFile>
+  <ReportGuid>68387cf292be4203a179b0a1faaaf7e1</ReportGuid>
+  <ReportName>report_1</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2022.1.6.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class report_1 : Stimulsoft.Report.StiReport
+    {
+        public report_1()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="13">
+    <Стиль21_Заголовок_Отчета1 Ref="13" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[44:115:107];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item13 Ref="14" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>ReportTitle</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item13>
+      </Conditions>
+      <Font>Arial,14,Bold</Font>
+      <Name>Стиль21_Заголовок_Отчета1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Заголовок_Отчета1>
+    <Стиль21_Заголовок_Отчета2 Ref="15" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[44:115:107];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item15 Ref="16" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>ReportTitle</Placement>
+          <PlacementNestedLevel>2</PlacementNestedLevel>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item15>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Стиль21_Заголовок_Отчета2</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Заголовок_Отчета2>
+    <Стиль21_Итог_Отчета1 Ref="17" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[44:115:107];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item17 Ref="18" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>ReportSummary</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item17>
+      </Conditions>
+      <Font>Arial,12,Bold</Font>
+      <Name>Стиль21_Итог_Отчета1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Итог_Отчета1>
+    <Стиль21_Итог_Отчета2 Ref="19" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[44:115:107];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item19 Ref="20" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>ReportSummary</Placement>
+          <PlacementNestedLevel>2</PlacementNestedLevel>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item19>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Стиль21_Итог_Отчета2</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Итог_Отчета2>
+    <Стиль21_Заголовок_Страницы Ref="21" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[44:115:107];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item21 Ref="22" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>PageHeader</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item21>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Стиль21_Заголовок_Страницы</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Заголовок_Страницы>
+    <Стиль21_Итог_Страницы Ref="23" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[44:115:107];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item23 Ref="24" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>PageFooter</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item23>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Стиль21_Итог_Страницы</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Итог_Страницы>
+    <Стиль21_Заголовок_Группы1 Ref="25" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[44:115:107];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item25 Ref="26" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>GroupHeader</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item25>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Стиль21_Заголовок_Группы1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:65:57]</TextBrush>
+    </Стиль21_Заголовок_Группы1>
+    <Стиль21_Итог_Группы1 Ref="27" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[44:115:107];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item27 Ref="28" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>GroupFooter</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item27>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Стиль21_Итог_Группы1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:65:57]</TextBrush>
+    </Стиль21_Итог_Группы1>
+    <Стиль21_Заголовок_Данных1 Ref="29" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[44:115:107];1;Solid;False;4;Black;True</Border>
+      <Brush>[144:215:207]</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item29 Ref="30" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Header</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item29>
+      </Conditions>
+      <Font>Arial,8,Bold</Font>
+      <Name>Стиль21_Заголовок_Данных1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Заголовок_Данных1>
+    <Стиль21_Данные1 Ref="31" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[44:115:107];1;Solid;False;4;Black;True</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item31 Ref="32" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Data</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item31>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Стиль21_Данные1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Данные1>
+    <Стиль21_Данные1_Стиль_x0020_нечетных_x0020_строк Ref="33" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[44:115:107];1;Solid;False;4;Black;True</Border>
+      <Brush>[255:255:255]</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item33 Ref="34" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataOddStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item33>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Стиль21_Данные1_Стиль нечетных строк</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Данные1_Стиль_x0020_нечетных_x0020_строк>
+    <Стиль21_Данные1_Стиль_x0020_четных_x0020_строк Ref="35" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[44:115:107];1;Solid;False;4;Black;True</Border>
+      <Brush>[219:255:255]</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item35 Ref="36" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataEvenStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item35>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Стиль21_Данные1_Стиль четных строк</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Данные1_Стиль_x0020_четных_x0020_строк>
+    <Стиль21_Итог_Данных1 Ref="37" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[44:115:107];1;Solid;False;4;Black;True</Border>
+      <Brush>[164:235:227]</Brush>
+      <CollectionName>Стиль21</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item37 Ref="38" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>Footer</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item37>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Стиль21_Итог_Данных1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:15:7]</TextBrush>
+    </Стиль21_Итог_Данных1>
+  </Styles>
+</StiSerializer>
